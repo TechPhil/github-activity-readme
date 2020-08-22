@@ -217,7 +217,7 @@ Toolkit.run(
     }
 
     // Update README
-    await fs.writeFileSync("./README.md", readmeContent.join("\n"));
+    fs.writeFileSync("./README.md", readmeContent.join("\n"));
 
     // Commit to the remote repository
     try {
