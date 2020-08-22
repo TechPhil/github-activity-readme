@@ -190,7 +190,7 @@ Toolkit.run(
     startIdx++;
 
     // Recent GitHub Activity content between the comments
-    const readmeActivitySection = readmeContent.slice(startIdx, endIdx);
+    const readmeActivitySection = readmeContent.slice(startIdx, endIdx+1);
     if (!readmeActivitySection.length) {
       content.some((line, idx) => {
         tools.log.debug(`${line}`)
