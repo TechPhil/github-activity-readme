@@ -1660,7 +1660,7 @@ Toolkit.run(
 
     if (oldContent.trim() === newContent.trim())
       tools.exit.success("No changes detected");
-    else tools.log.info(`Changes detected - ${oldContent.trim()} / ${newContent.trim()}`)
+    else tools.log.debug(`Changes detected - ${oldContent.trim()} / ${newContent.trim()}`)
 
     startIdx++;
 
