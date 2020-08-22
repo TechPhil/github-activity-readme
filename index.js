@@ -151,7 +151,7 @@ Toolkit.run(
       tools.log.info("Found less than 5 activities");
     }
 
-    if (startIdx !== -1 && endIdx === -1) {
+    if (startIdx !== -1 && endIdx === -1) { // If there is just a start index
       // Add one since the content needs to be inserted just after the initial comment
       startIdx++;
       content.forEach((line, idx) =>
@@ -185,6 +185,7 @@ Toolkit.run(
 
     if (oldContent.trim() === newContent.trim())
       tools.exit.success("No changes detected");
+    else tools.log.info("Changes detected - ${oldContent.trim()} / ${newContent.trim()}")
 
     startIdx++;
 
