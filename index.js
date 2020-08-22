@@ -212,9 +212,9 @@ Toolkit.run(
           return true;
         }
         if (line !== "") {
-          tools.debug.log(`LN 215 - line = ${line}`)
+          tools.log.debug(`LN 215 - line = ${line}`)
           readmeContent[startIdx + idx] = `${count + 1}. ${content[count]}`;
-          tools.debug.log(`LN 217 - ${readmeContent[startIdx + idx]} /// ${count + 1}. ${content[count]}`)
+          tools.log.debug(`LN 217 - ${readmeContent[startIdx + idx]} /// ${count + 1}. ${content[count]}`)
           count++;
         }
       });
