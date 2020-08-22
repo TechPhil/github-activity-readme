@@ -193,6 +193,7 @@ Toolkit.run(
     const readmeActivitySection = readmeContent.slice(startIdx, endIdx);
     if (!readmeActivitySection.length) {
       content.some((line, idx) => {
+        tools.log.debug(`${line}`)
         // User doesn't have 5 public events
         if (!line) {
           return true;
@@ -207,10 +208,13 @@ Toolkit.run(
       readmeActivitySection.some((line, idx) => {
         // User doesn't have 5 public events
         if (!content[count]) {
+          tools.log.debug(`LN 211`)
           return true;
         }
         if (line !== "") {
+          tools.debug.log(`LN 215 - line = ${line}`)
           readmeContent[startIdx + idx] = `${count + 1}. ${content[count]}`;
+          tools.debug.log(`LN 217 - ${readmeContent[startIdx + idx]} /// ${count + 1}. ${content[count]}`)
           count++;
         }
       });
