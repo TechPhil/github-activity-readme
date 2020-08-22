@@ -185,7 +185,6 @@ Toolkit.run(
 
     if (oldContent.trim() === newContent.trim())
       tools.exit.success("No changes detected");
-    else tools.log.debug(`Changes detected - ${oldContent.trim()} / ${newContent.trim()}`)
 
     startIdx++;
 
@@ -193,7 +192,6 @@ Toolkit.run(
     const readmeActivitySection = readmeContent.slice(startIdx, endIdx+1);
     if (!readmeActivitySection.length) {
       content.some((line, idx) => {
-        tools.log.debug(`${line}`)
         // User doesn't have 5 public events
         if (!line) {
           return true;
@@ -208,13 +206,10 @@ Toolkit.run(
       readmeActivitySection.some((line, idx) => {
         // User doesn't have 5 public events
         if (!content[count]) {
-          tools.log.debug(`LN 211`)
           return true;
         }
         if (line !== "") {
-          tools.log.debug(`LN 215 - line = ${line}`)
           readmeContent[startIdx + idx] = `${count + 1}. ${content[count]}`;
-          tools.log.debug(`LN 217 - ${readmeContent[startIdx + idx]} /// ${count + 1}. ${content[count]}`)
           count++;
         }
       });
@@ -223,9 +218,6 @@ Toolkit.run(
 
     // Update README
     await fs.writeFileSync("./README.md", readmeContent.join("\n"));
-
-    let currentReadmeContents = fs.readFileSync("./README.md")
-    tools.log.debug(`${currentReadmeContents}`)
 
     // Commit to the remote repository
     try {
