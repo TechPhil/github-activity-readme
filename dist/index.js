@@ -1599,7 +1599,7 @@ Toolkit.run(
       // Call the serializer to construct a string
       .map((item) => serializers[item.type](item));
 
-    const readmeContent = fs.readFileSync("./README.md", "utf-8").split("\n");
+    var readmeContent = fs.readFileSync("./README.md", "utf-8").split("\n");
 
     // Find the indec corresponding to <!--START_SECTION:activity--> comment
     let startIdx = readmeContent.findIndex(
